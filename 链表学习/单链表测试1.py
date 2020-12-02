@@ -36,6 +36,14 @@ class SingleLinkList(object):
             tail=node
         return self._head
 
+    def creat_list_tail1(self,list): #1->2->3->4 尾插法 先使尾结点指向新的节点，再把尾结点移到最后
+        ans=None
+        for li in list:
+            node = Node(li)
+            node.next=ans
+            ans=node
+        return ans
+
 
     def print_list(self,nodes):                      #打印链表
         while nodes:
@@ -47,8 +55,8 @@ class SingleLinkList(object):
 if __name__ == '__main__':
     s=SingleLinkList()
     list1 = [1, 2, 3, 4]
-    # c1 = s.creat_list_head(list1)
-    # s.print_list(c1)
+    c1 = s.creat_list_head(list1)
+    s.print_list(c1)
 
-    c2 = s.creat_list_tail(list1)
+    c2 = s.creat_list_tail1(list1)
     s.print_list(c2)

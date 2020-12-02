@@ -1,11 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b93dae11-90ef-4496-adca-e69b9bd00d0d" name="Default Changelist" comment="" />
+    <list default="true" id="b93dae11-90ef-4496-adca-e69b9bd00d0d" name="Default Changelist" comment="add 20201126">
+      <change afterPath="$PROJECT_DIR$/分布式锁/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/分布式锁/distributedLock.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/链表学习/链表求和.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/leetcode/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/leetcode/editor.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2、链表操作/两数相加.py" beforeDir="false" afterPath="$PROJECT_DIR$/2、链表操作/两数相加.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/链表学习/tt.py" beforeDir="false" afterPath="$PROJECT_DIR$/链表学习/tt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/链表学习/单链表测试1.py" beforeDir="false" afterPath="$PROJECT_DIR$/链表学习/单链表测试1.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -16,8 +39,17 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="D:\leedcode\.idea" />
+      </set>
+    </option>
   </component>
   <component name="ProjectId" id="1kRzrAQdES4zFMWBjLFp0bpKeRz" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -26,16 +58,18 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/面试知识点" />
+    <property name="settings.editor.selected.configurable" value="leetcode.id" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\leedcode\面试知识点" />
+      <recent name="D:\leedcode\布隆过滤器" />
       <recent name="D:\leedcode" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test">
-    <configuration name="[387]字符串中的第一个唯一字符" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.两数相加">
+    <configuration name="两数相加" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="leedcode" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -43,12 +77,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/2、链表操作" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/[387]字符串中的第一个唯一字符.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/2、链表操作/两数相加.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -57,7 +91,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="单链表测试1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="leedcode" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -65,12 +99,188 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/链表学习" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/链表学习/单链表测试1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="单链表测试1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="leedcode" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/链表学习" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/链表学习/单链表测试1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="链表求和" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="leedcode" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/链表学习" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/链表学习/链表求和.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="单链表" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="leedcode" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/链表学习" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/链表学习/单链表.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="快速幂" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="leedcode" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/数学相关知识" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/数学相关知识/快速幂.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="最大公约数" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="leedcode" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/数学相关知识" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/数学相关知识/最大公约数.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="最小公倍数" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="leedcode" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/数学相关知识" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/数学相关知识/最小公倍数.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="distributedLock" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="leedcode" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/分布式锁" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/分布式锁/distributedLock.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tt" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="leedcode" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/链表学习" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/链表学习/tt.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -81,8 +291,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.[387]字符串中的第一个唯一字符" />
+        <item itemvalue="Python.两数相加" />
+        <item itemvalue="Python.单链表测试1" />
+        <item itemvalue="Python.链表求和" />
+        <item itemvalue="Python.distributedLock" />
+        <item itemvalue="Python.tt" />
       </list>
     </recent_temporary>
   </component>
@@ -108,45 +321,191 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605678387924</updated>
-      <workItem from="1605678389654" duration="9032000" />
+      <workItem from="1605678389654" duration="11173000" />
+      <workItem from="1605747179312" duration="1958000" />
+      <workItem from="1605838163728" duration="13217000" />
+      <workItem from="1605867823257" duration="20000" />
+      <workItem from="1606116991680" duration="1270000" />
+      <workItem from="1606266795549" duration="18328000" />
+      <workItem from="1606360091354" duration="12928000" />
+      <workItem from="1606439339635" duration="7008000" />
+      <workItem from="1606702717015" duration="8556000" />
+      <workItem from="1606786271465" duration="15570000" />
+      <workItem from="1606873694381" duration="14670000" />
     </task>
+    <task id="LOCAL-00001" summary="add">
+      <created>1605692494247</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1605692494248</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add">
+      <created>1605692527901</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1605692527901</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add 数学相关知识">
+      <created>1606266921701</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1606266921701</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add 20201125">
+      <created>1606291413923</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1606291413923</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add 20201125">
+      <created>1606297953007</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1606297953007</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add 20201126">
+      <created>1606385540940</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1606385540940</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add 20201127">
+      <created>1606467392688</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1606467392688</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add 20201201">
+      <created>1606817189776</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1606817189776</updated>
+    </task>
+    <task id="LOCAL-00009" summary="add 20201201">
+      <created>1606818377197</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1606818377197</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add" />
+    <MESSAGE value="add 数学相关知识" />
+    <MESSAGE value="add 20201125" />
+    <MESSAGE value="add 20201126" />
+    <MESSAGE value="add 20201127" />
+    <MESSAGE value="add 20201201" />
+    <option name="LAST_COMMIT_MESSAGE" value="add 20201201" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="560" y="112" key="CommitChangelistDialog2" timestamp="1605692494259">
+    <state x="693" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606381776064">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="560" y="112" key="CommitChangelistDialog2/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1605692494259" />
-    <state x="831" y="410" width="273" height="292" key="Github.ShareDialog" timestamp="1605692381044">
+    <state x="693" y="322" key="#com.intellij.fileTypes.FileTypeChooser/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1606381776064" />
+    <state x="560" y="112" key="CommitChangelistDialog2" timestamp="1606818376351">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="831" y="410" width="273" height="292" key="Github.ShareDialog/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1605692381044" />
-    <state width="1876" height="310" key="GridCell.Tab.0.bottom" timestamp="1605685654206">
+    <state x="560" y="112" key="CommitChangelistDialog2/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1606818376351" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1606126670427">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="310" key="GridCell.Tab.0.bottom/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1605685654206" />
-    <state width="1876" height="310" key="GridCell.Tab.0.center" timestamp="1605685654205">
+    <state x="740" y="275" key="FileChooserDialogImpl/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1606126670427" />
+    <state x="831" y="410" width="273" height="292" key="Github.ShareDialog" timestamp="1605696074346">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="310" key="GridCell.Tab.0.center/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1605685654205" />
-    <state width="1876" height="310" key="GridCell.Tab.0.left" timestamp="1605685654205">
+    <state x="831" y="410" width="273" height="292" key="Github.ShareDialog/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1605696074346" />
+    <state width="938" height="190" key="GridCell.Tab.0.bottom" timestamp="1606903723266">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="310" key="GridCell.Tab.0.left/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1605685654205" />
-    <state width="1876" height="310" key="GridCell.Tab.0.right" timestamp="1605685654206">
+    <state width="938" height="190" key="GridCell.Tab.0.bottom/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1606903723266" />
+    <state width="938" height="190" key="GridCell.Tab.0.center" timestamp="1606903723266">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="310" key="GridCell.Tab.0.right/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1605685654206" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1605682409897">
+    <state width="938" height="190" key="GridCell.Tab.0.center/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1606903723266" />
+    <state width="938" height="190" key="GridCell.Tab.0.left" timestamp="1606903723266">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="162" key="SettingsEditor/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1605682409897" />
+    <state width="938" height="190" key="GridCell.Tab.0.left/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1606903723266" />
+    <state width="938" height="190" key="GridCell.Tab.0.right" timestamp="1606903723266">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="190" key="GridCell.Tab.0.right/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1606903723266" />
+    <state width="938" height="348" key="GridCell.Tab.1.bottom" timestamp="1606297961900">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="348" key="GridCell.Tab.1.bottom/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1606297961900" />
+    <state width="938" height="348" key="GridCell.Tab.1.center" timestamp="1606297961900">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="348" key="GridCell.Tab.1.center/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1606297961900" />
+    <state width="938" height="348" key="GridCell.Tab.1.left" timestamp="1606297961900">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="348" key="GridCell.Tab.1.left/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1606297961900" />
+    <state width="938" height="348" key="GridCell.Tab.1.right" timestamp="1606297961900">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="348" key="GridCell.Tab.1.right/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1606297961900" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1606290254492">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1606290254492" />
+    <state x="552" y="241" key="Vcs.Push.Dialog.v2" timestamp="1606818378428">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="241" key="Vcs.Push.Dialog.v2/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1606818378428" />
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1606439354959">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1606439354959" />
+    <state x="752" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606266877386">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="752" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1606266877386" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1606360862266">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1606360862266" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/4、数组系列/最长公共前缀.py</url>
+          <line>51</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/leedcode$_387_.coverage" NAME="[387]字符串中的第一个唯一字符 Coverage Results" MODIFIED="1605683072208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn" />
+    <SUITE FILE_PATH="coverage/leedcode$distributedLock.coverage" NAME="distributedLock Coverage Results" MODIFIED="1606878647029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/分布式锁" />
+    <SUITE FILE_PATH="coverage/leedcode$.coverage" NAME="两数相加 Coverage Results" MODIFIED="1606903723256" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2、链表操作" />
+    <SUITE FILE_PATH="coverage/leedcode$bloom_filter_test.coverage" NAME="bloom_filter_test Coverage Results" MODIFIED="1606273329873" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/布隆过滤器" />
+    <SUITE FILE_PATH="coverage/leedcode$1.coverage" NAME="单链表测试1 Coverage Results" MODIFIED="1606903550341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/链表学习" />
+    <SUITE FILE_PATH="coverage/leedcode$2.coverage" NAME="2 Coverage Results" MODIFIED="1606445185568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/链表学习" />
     <SUITE FILE_PATH="coverage/leedcode$test.coverage" NAME="test Coverage Results" MODIFIED="1605685654197" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/leedcode$redisBloom.coverage" NAME="redisBloom Coverage Results" MODIFIED="1606283781272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/布隆过滤器" />
+    <SUITE FILE_PATH="coverage/leedcode$bloomfilter.coverage" NAME="bloomfilter Coverage Results" MODIFIED="1606269500409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/布隆过滤器" />
+    <SUITE FILE_PATH="coverage/leedcode$bloom_filter__1_.coverage" NAME="bloom_filter (1) Coverage Results" MODIFIED="1606274342871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/布隆过滤器" />
+    <SUITE FILE_PATH="coverage/leedcode$pybool_live.coverage" NAME="pybool_live Coverage Results" MODIFIED="1606274529034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/布隆过滤器" />
+    <SUITE FILE_PATH="coverage/leedcode$tt.coverage" NAME="tt Coverage Results" MODIFIED="1606817550146" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/链表学习" />
+    <SUITE FILE_PATH="coverage/leedcode$bloom_filter1.coverage" NAME="bloom_filter1 Coverage Results" MODIFIED="1606274007123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/布隆过滤器" />
+    <SUITE FILE_PATH="coverage/leedcode$bloom_filter_redis.coverage" NAME="bloom_filter_redis Coverage Results" MODIFIED="1606271065711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/布隆过滤器" />
   </component>
 </project>
