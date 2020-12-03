@@ -23,27 +23,22 @@ class SingleLinkList(object):
 
 
     def reversed2(self,node):
-        #链表反转-递归实现 不断逆转当前结点，直到链表尾端，时间复杂度O(n) 1->2->3->4
+        #链表反转-递归实现 不断逆转当前结点，直到链表尾端，时间复杂度O(n) 1->2->3->4->5
         if node is None or node.next is None:
             return node
-        pnext = node.next
+        reversed = self.reversed2(node.next)
+        node.next.next = node
         node.next = None
-        reversed = self.reversed2(pnext)
-        pnext.next = node
         return reversed
 
-
-    def reversed3(self,node,pre=None):
-        #链表反转-递归实现 不过递归传入当前结点和前序结点，代码可读性要好点，时间复杂度O(n) 1->2->3->4
-        if node is None or node.next is None:
-            return node
-        if node.next is None:
-            node.next = pre
-            return node
+    def reversed3(self,node):
+        #链表逆序输出 5 4 3 2 1
+        if node==None:
+            return
         else:
-            pnext = node.next
-            node.next = pre
-            return self.reversed3(pnext, node)
+            self.reversed3(node.next)
+            print(node.elem)
+
 
 
 
@@ -67,7 +62,7 @@ class SingleLinkList(object):
 
 if __name__ == '__main__':
     s=SingleLinkList()
-    lists=[1,2,3,4]
+    lists=[1,2,3,4,5]
     node1=s.tail_node(lists)
     node=s.reversed3(node1)
     s.printfs(node)
