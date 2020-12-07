@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-@File    :   输出重复项目.py
+@File    :   删除重复项目.py
 @Contact :   smilemilks@qq.com
 @Author  :   haochen214934
 @Create Time      @Version    @Desciption
@@ -28,7 +28,7 @@ class SingleLinkList(object):
             tail=node
         return self._head
 
-    def removeDup(self,node):#[1, 2, 3, 4,1,5,4,6,1] 从有序列表里面删除重复项目
+    def removeDup(self,node):#[1, 2, 3, 4,1,5,4,6,1] 从无序列表里面删除重复项目
         if node == None or node.next == None:
             return
         outcur = node
@@ -44,6 +44,20 @@ class SingleLinkList(object):
             outcur = outcur.next
         return node
 
+    def removeOrderly(self,node):#删除有序列表里面重复数字 [1,2,2,3,4,5,5,6,6,6,6,6,6,6,6,7]
+        cur=node
+        while cur is not None:
+            pnext=cur.next
+            curVal=cur.elem
+            if pnext is not None:
+                if curVal==pnext.elem:
+                    cur.next=pnext.next
+                else:
+                    cur=pnext
+            else:
+                cur = pnext
+        return node
+
     def printfs(self,node):
         if node==None:
             return
@@ -53,7 +67,10 @@ class SingleLinkList(object):
 
 if __name__ == '__main__':
     s=SingleLinkList()
-    list1 = [1, 2, 3, 4,1,5,4,1,2,6]
+    # list1 = [1, 2, 3, 4,1,5,4,1,2,6]
+    # list1 = [1,2,2,3,4,5,5,6,6,6,6,6,6,6,6,7,7]
+    list1=[2,2,4,4,9,9,4,4]
     c1 = s.node_tail(list1)
     move=s.removeDup(c1)
+    # move = s.removeOrderly(c1)
     s.printfs(move)
