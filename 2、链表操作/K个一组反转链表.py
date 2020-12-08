@@ -73,7 +73,6 @@ class Solution:
             cur.next=pre.next
             pre.next=cur
             cur=lpre.next
-        print(self.print_item(lpre))
         return lpre
 
 
