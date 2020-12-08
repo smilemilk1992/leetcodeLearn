@@ -8,7 +8,7 @@ class SingleLinkList(object):
     def __init__(self, node=None):  # 使用一个默认参数，在传入头结点时则接收，在没有传入时，就默认头结点为空
         self._head = node
 
-    def reversed1(self,node):
+    def reversed1(self,node): #https://blog.csdn.net/qq_17550379/article/details/80647926
         #链表反转-非递归实现 就地反转，遍历链表，逐个逆转 时间复杂度O(n) 1->2->3->4
         if node is None or node.next is None:
             return node
@@ -31,13 +31,6 @@ class SingleLinkList(object):
         node.next = None
         return reversed
 
-    def reversed3(self,node):
-        #链表逆序输出 5 4 3 2 1
-        if node==None:
-            return
-        else:
-            self.reversed3(node.next)
-            print(node.elem)
 
 
 
