@@ -46,10 +46,10 @@ class Solution:
         while fast.next:
             fast=fast.next
             slow=slow.next
-        fast.next=head
-        fast=slow.next # 4 5 6 指向头结点
-        # print(self.print_item(fast))
-        slow.next=None #截段 1 2 3 后面数 循环链表变为单链表
+
+        fast.next=head #形成一个环 fast=612345612345 head=123456123456
+        fast=slow.next # 4 5 6 指向头结点  fast=456123456123
+        slow.next=None #截段 1 2 3 后面数 循环链表变为单链表 fast=456123
         return fast
 
 
