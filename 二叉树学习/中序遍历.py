@@ -21,13 +21,23 @@ class Solution:
     '''
     若二叉树为空，为空操作；否则（1）中序遍历左子树；（2）访问根结点；（3）中序遍历右子树。
     '''
-    def inorderTraversal(self, root: TreeNode) -> List[int]:
+    def inorderTraversal(self, root: TreeNode) -> List[int]:#递归
         if root.left is not None:
             self.inorderTraversal(root.left)
         if root.val is not None:
             print(root.val, end=" ")
         if root.right is not None:
             self.inorderTraversal(root.right)
+
+    def inorderTraversal1(self, root: TreeNode) -> List[int]:#迭代
+        flag=[]
+        while flag or root:
+            while root:
+                flag.append(root)
+                root=root.left
+            root=flag.pop()
+            root=root.right
+
 
 if __name__ == '__main__':
     # 构造二叉树
@@ -44,4 +54,4 @@ if __name__ == '__main__':
     rightTree3.right=rightTree2
 
     s=Solution()
-    s.inorderTraversal(rightTree3)
+    s.inorderTraversal1(rightTree3)

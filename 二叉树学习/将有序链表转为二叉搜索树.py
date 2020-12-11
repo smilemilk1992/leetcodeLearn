@@ -59,7 +59,7 @@ class Solution:
     但是由于有限制条件，需要转换为高度平衡二叉树，根据前面给出高度平衡二叉树的概念。那么我们考虑选择数组的中间元素作为根节点来代替前面的任意选择一个元素。
     '''
 
-    def findMidNode(self, head):
+    def findMidNode(self, head):#快慢指针
         if not head:
             return None
         fast, slow = head, head

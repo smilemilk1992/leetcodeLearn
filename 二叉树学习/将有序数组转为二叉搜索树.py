@@ -58,7 +58,6 @@ class Solution:
         root.left = self.sortedArrayToBST(nums[:mid])#左子树
         root.right = self.sortedArrayToBST(nums[mid + 1:])#右子树
         return root
-        return dfs(0, len(nums) - 1)
 
     def printf(self,head: TreeNode):#中序遍历
         if head.left:
