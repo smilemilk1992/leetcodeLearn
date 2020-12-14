@@ -122,4 +122,4 @@ if __name__ == '__main__':
     rightTree3.right=rightTree2
 
     s=Solution()
-    s.levelorderTraversal3(rightTree3)
+    s.levelorderTraversal(rightTree3)

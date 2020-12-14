@@ -31,6 +31,10 @@
 #  新值和原始二叉搜索树中的任意节点值都不同
 """
 __author__ = 'haochen214934'
+
+from typing import List
+
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -38,4 +42,58 @@ class TreeNode:
         self.right = right
 class Solution:
     def insertIntoBST(self, root: TreeNode, val: int) -> TreeNode:
-        pass
+        node=TreeNode(val)
+        if not root:
+            return node
+        cur=root
+        while cur:
+            if val==cur.val:
+                break
+            elif val<cur.val:
+                if cur.left is None:
+                    cur.left=node
+                else:
+                    cur=cur.left
+            else:
+                if cur.right is None:
+                    cur.right=node
+                else:
+                    cur=cur.right
+        return root
+
+
+    def inorderTraversal1(self, root: TreeNode) -> List[int]:  # 迭代 中序遍历
+        flag = []
+        while flag or root:
+            while root:
+                flag.append(root)
+                root = root.left
+            root = flag.pop()
+            print(root.val)
+            root = root.right
+
+if __name__ == '__main__':
+    # 构造二叉树
+    rightTree = TreeNode(1)
+
+    rightTree1 = TreeNode(6)
+    rightTree1.left = TreeNode(4)
+    rightTree1.right = TreeNode(7)
+
+    rightTree2 = TreeNode(14)
+    rightTree2.left = TreeNode(11)
+
+    rightTree3 = TreeNode(10)
+    rightTree3.right = rightTree2
+
+    rightTree4 = TreeNode(3)
+    rightTree4.left = rightTree
+    rightTree4.right = rightTree1
+
+    rightTree5 = TreeNode(8)
+    rightTree5.left = rightTree4
+    rightTree5.right = rightTree3
+
+    s = Solution()
+    sss = s.insertIntoBST(rightTree5, 15)
+    s.inorderTraversal1(sss)
