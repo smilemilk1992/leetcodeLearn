@@ -48,6 +48,6 @@ class Solution2:
 
 if __name__ == '__main__':
     s=Solution1()
-    a=54
-    b=24
+    a=14
+    b=8
     print(s.gcd(a,b))

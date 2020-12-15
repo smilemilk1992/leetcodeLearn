@@ -29,7 +29,7 @@ class Solution1:
         base =a
         ans=1
         while b:
-            if b&1: #与
+            if b&1: #与 奇数&1=1 偶数&1=0 奇数多请求一次
                 ans=ans*base
             base=base*base
             b>>=1

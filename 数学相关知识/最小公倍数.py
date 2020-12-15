@@ -24,6 +24,11 @@ class Solution2:
         return a,b
 
     def mcd(self, a,b):
+        '''
+        :param a:
+        :param b:
+        :return: if a%b!=0  else a*b/a%b (a>b情况)
+        '''
         if a<b:
             a,b=self.exchange(a,b)
         if a % b == 0:
@@ -34,6 +39,6 @@ class Solution2:
 
 if __name__ == '__main__':
     s=Solution1()
-    a = 24
+    a = 28
     b = 32
     print(s.mcd(a,b))

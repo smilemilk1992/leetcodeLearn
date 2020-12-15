@@ -63,8 +63,8 @@ class Solution:
             root.right = self.deleteNode(root.right, key)
         else:
             # 存在的子树代替根节点
-            if not root.left or not root.right:#如果删除的当前左子数或者右子数为空 那么当前值就是左或者右中存在的一个
-                root = root.left if root.left else root.right
+            if not root.left and not root.right:#如果删除的当前左子数或者右子数为空 那么当前值就是左或者右中存在的一个
+                root = None
             else:
                 temp = root.right
                 # 找到右子树的最小（最左）节点
@@ -109,5 +109,5 @@ if __name__ == '__main__':
     rightTree5.right = rightTree3
 
     s = Solution()
-    sss=s.deleteNode(rightTree5,3)
+    sss=s.deleteNode(rightTree5,7)
     s.inorderTraversal1(sss)
