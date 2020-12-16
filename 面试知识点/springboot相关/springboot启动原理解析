@@ -1,0 +1,41 @@
+#http://tengj.top/2017/03/09/springboot3/
+/**
+ * https://blog.csdn.net/wangbiao007/article/details/101020426
+ * @ComponentScan(" ") 扫包范围默认当前类所在的整个包下面所有类，意思是@ComponentScan(" ")注解扫包他只能扫web包下面的类，它不能扫test包下面的类
+ * @ComponentScan(" ")扫包范围大于@EnableAutoConfiguration
+ * 同时@ComponentScan(" ")要依赖于@EnableAutoConfiguration才能启动程序
+ * 同时@ComponentScan(" ")要依赖于@EnableAutoConfiguration才能启动程序，@EnableAutoConfiguration自己可以启动程序，@ComponentScan(" ")自己却不能启动程序
+ *
+ * .@SpringBootApplication 底层等同于@EnableAutoConfiguration+@ComponentScan。
+ * @ComponentScan和@EnableAutoConfiguration的相同点
+ * 两者都可以将带有@Component，@Service等注解的对象加入到ioc容器中。
+ *
+ * @ComponentScan和@EnableAutoConfiguration的不同点
+ * 1.两者虽然都能将带有注解的对象放入ioc容器中，但是它们扫描的范围是不一样的。@ComponentScan扫描的范围默认是它所在的包以及子包中所有带有注解的对象，@EnableAutoConfiguration扫描的范围默认是它所在类。
+ * 2.它们作用的对象不一样，@EnableAutoConfiguration除了扫描本类带有的注解外，还会 借助@Import的支持，收集和注册依赖包中相关的bean定义，将这些bean注入到ioc容器中，在springboot中注入的bean有两部分组成，一部分是自己在代码中写的标注有@Controller,@service,@Respority等注解的业务bean，这一部分bean就由@ComponentScan将它们加入到ioc容器中，还有一部分是springboot自带的相关bean，可以将这部分bean看成是工具bean，这部分bean就是由@EnableAutoConfiguration负责加入到容器中。
+ * 3.@EnableAutoConfiguration可以单独启动springboot项目，而@ComponentScan是不能的。
+ */
+@Configuration //允许在上下文中注册其他的bean或导入额外的配置类。
+@EnableAutoConfiguration //时会扫描整个类路径下，包括依赖引入的jar包所有的自动配置类（被注解了@Configuration的类），尝试进行自动配置 启用 SpringBoot 的自动配置机制 帮助SpringBoot应用将所有符合条件的@Configuration配置都加载到当前SpringBoot，并创建对应配置类的Bean，并把该Bean实体交给IoC容器进行管理 扫包范围默认当前类
+@ComponentScan //扫包范围默认当前类所在的整个包下面所有类。 扫描被@Component (@Service,@Controller)注解的 bean，注解默认会扫描该类所在的包下所有的类。
+
+---------------------------------------------------------------------------------------------------------------
+@SpringBootApplication 等价于 @Configuration @EnableAutoConfiguration @ComponentScan
+所以SpringBoot的启动类最好是放在root package下，因为默认不指定basePackages。
+
+@Configuration
+    1、允许在上下文中注册其他的bean或导入额外的配置类。
+    2、作用在一个类上，相当于xml文件的配置的beans。下面可包含多个@Bean,交给spring去管理。
+@EnableAutoConfiguration
+    1、可以单独启动springboot项目
+    2、扫描的范围默认是它当前所在的类，包括依赖引入的jar包所有的自动配置类
+    3、这个注解就会根据你引入的依赖猜想你需要的配置，然后去自动配置。
+    4、借助@Import的支持，收集和注册特定场景相关的bean定义。
+    5、@EnableAutoConfiguration作用就是从classpath中搜寻所有的META-INF/spring.factories配置文件，并将其中org.springframework.boot.autoconfigure.EnableutoConfiguration对应的配置项通过反射（Java Refletion）实例化为对应的标注了@Configuration的JavaConfig形式的IoC容器配置类，然后汇总为一个并加载到IoC容器。这些功能配置类要生效的话，会去classpath中找是否有该类的依赖类（也就是pom.xml必须有对应功能的jar包才行）并且配置类里面注入了默认属性值类，功能类可以引用并赋默认值。生成功能类的原则是自定义优先，没有自定义时才会使用自动装配类。
+    6、而@EnableAutoConfiguration中Import了@EnableAutoConfigurationImportSelector注解，该注解的内部通过SpringFactoriesLoader.loadFactoryNames()读取了ClassPath下面的META-INF/spring.factories文件中key为的字符串数组，然后加载字节码，最后纳入到Spring IOC容器中。
+    7、Spring Boot在启动的时候从类路径下的META-INF/spring.factories中获取EnableAutoConfiguration指定的值，将这些值作为自动配置类导入到容器中，自动配置类就生效，帮我们进行自动配置工作。以前我们需要自己配置的东西，自动配置类都帮我们完成了。
+@ComponentScan
+    1、扫描的范围默认是它所在的包以及子包中所有带有注解的对象
+    2、@ComponentScan(" ")要依赖于@EnableAutoConfiguration才能启动程序，自己不能启动springboot项目
+    3、扫描范围大于@EnableAutoConfiguration
+    4、这个注解就是定义你需要扫描的路径，然后把路径下的配置了@Component（或者@Controller, @Service, @Repository）的放到spring容器里面，可以供其他类引用

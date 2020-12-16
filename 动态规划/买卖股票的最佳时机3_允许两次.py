@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-@File    :   买卖股票的最佳时机1.py
+@File    :   买卖股票的最佳时机1_允许一次.py
 @Contact :   smilemilks@qq.com
 @Author  :   haochen214934
 @Create Time      @Version    @Desciption
@@ -43,6 +43,7 @@ from typing import List
 class Solution:
     #最多完成两笔交易
     #动态规划 https://blog.csdn.net/qq_36512295/article/details/100782630
+    #dp[t][i]代表前i个日子进行t次交易最大的收益值。
     def maxProfit(self, prices: List[int]) -> int:
         if not prices:
             return 0
@@ -51,25 +52,29 @@ class Solution:
         for t in range(1, 3):
             min_p = prices[0]  # 初始化最小负收益，即买入初始股票
             for i in range(1, n):
-                min_p = min(min_p, prices[i] - dp[t - 1][i - 1])  # 更新最小负收益
+                min_p = min(min_p, prices[i] - dp[t - 1][i - 1])  # 更新最小负收益 而第 i-1 天的上次交易后的最大收益为 dp[t-1][i-1]
                 dp[t][i] = max(dp[t][i - 1], prices[i] - min_p)  # 更新当前交易次数下第 i 天的最大收益
         return dp[-1][-1]
 
-    #数组
     def maxProfit1(self, prices: List[int]) -> int:
-        if not prices:
-            return 0
-        min =prices[0]
-        money=0
-        i=0
-        for p in prices:
-            if p<=min:
-                min=p
-            print(p,min,money)
-            if p-min>money and i%2<=1 and i<=2:
-                i = i + 1
-                money=money+(p-min)
-        return money
+        """
+          对于任意一天考虑四个变量:
+          fstBuy: 在该天第一次买入股票可获得的最大收益
+          fstSell: 在该天第一次卖出股票可获得的最大收益
+          secBuy: 在该天第二次买入股票可获得的最大收益
+          secSell: 在该天第二次卖出股票可获得的最大收益
+          分别对四个变量进行相应的更新, 最后secSell就是最大
+          收益值(secSell >= fstSell)
+        """
+        fstBuy,fstSell= -prices[0],0
+        secBuy,secSell= -prices[0],0
+        for i in prices:
+            fstBuy = max(fstBuy, -i)
+            fstSell = max(fstSell, fstBuy + i)
+            secBuy = max(secBuy, fstSell - i)
+            secSell = max(secSell, secBuy + i)
+        return secSell
+
 
 
 

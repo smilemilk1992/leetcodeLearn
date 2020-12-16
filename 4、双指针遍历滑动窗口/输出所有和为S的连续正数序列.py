@@ -27,7 +27,7 @@ class Solution:
         result=[]
         plow=1
         phigh=2
-        if sum<=3:
+        if sum<3:
             return result
         while plow<phigh:
             cur=(plow+phigh)*(phigh-plow+1)/2
@@ -49,7 +49,7 @@ class Solution:
 
 
 if __name__ == '__main__':
-    s=100
+    s=9
     a=Solution()
     result = a.FindContinuousSequence(s)
     print(result)

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-@File    :   买卖股票的最佳时机1.py
+@File    :   买卖股票的最佳时机1_允许一次.py
 @Contact :   smilemilks@qq.com
 @Author  :   haochen214934
 @Create Time      @Version    @Desciption
@@ -47,26 +47,33 @@ class Solution:
                 money=p-min
         return money
 
-    #动态规划 https://blog.csdn.net/qq_36512295/article/details/100761654
-    #dp[n][k] n表示第几天 k：0-无交易 1-有交易
+    #改进
     def maxProfit1(self, prices: List[int]) -> int:
+        if not prices:
+            return 0
+        minprice=float('inf')
+        maxprofit=0
+        for p in prices:
+            minprice = min(p,minprice)
+            maxprofit =max(maxprofit,p-minprice)
+        return maxprofit
+
+
+    def maxProfit2(self, prices: List[int]) -> int:
         if not prices:
             return 0
             # 初始化状态
         n = len(prices)
-        # 初始化 i=0 的状态
-        dp = [[0] * 2 for _ in range(n)]
-        dp[0][1] = -prices[0] #第0天 买入
-        # 从 i=1 处开始动态转移
-        for i in range(1, n):
-            dp[i][0] = max(dp[i - 1][0], dp[i - 1][1] + prices[i]) #持有状态 max(无操作，买入)
-            dp[i][1] = max(dp[i - 1][1], -prices[i]) #未持有状态 max(无操作，卖出)
-        print(dp)
-        return dp[n - 1][0]
+        dp=[0]*n
+        minprice=prices[0]
+        for i in range(1,n):
+            minprice=min(minprice,prices[i])
+            dp[i]=max(dp[i-1],prices[i]-minprice)
+        return dp[-1]
 
 
 if __name__ == '__main__':
     s=Solution()
     prices=[7,1,5,3,6,4]
-    money=s.maxProfit1(prices)
+    money=s.maxProfit2(prices)
     print(money)

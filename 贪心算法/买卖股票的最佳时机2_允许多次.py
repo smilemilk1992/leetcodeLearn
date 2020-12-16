@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-@File    :   买卖股票的最佳时机1.py
+@File    :   买卖股票的最佳时机1_允许一次.py
 @Contact :   smilemilks@qq.com
 @Author  :   haochen214934
 @Create Time      @Version    @Desciption
