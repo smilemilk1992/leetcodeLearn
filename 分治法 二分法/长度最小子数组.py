@@ -26,41 +26,6 @@ from typing import List
 
 
 class Solution:
-    #双指针
-    def minSubArrayLen(self, s: int, nums: List[int]) -> int:
-        res=0
-        if not nums:
-            return res
-        if nums[0]>=s:
-            return 1
-        plow=0
-        phigh=1
-        flag=float('inf')
-        while plow<phigh and plow<len(nums) and phigh<len(nums):
-            if nums[plow]>=s or nums[phigh]>=s:
-                flag=1
-            sumNum=sum(nums[plow:phigh+1])
-            if sumNum>=s:
-                flag=min(flag,phigh-plow+1)
-                plow=plow+1
-            else:
-                phigh=phigh+1
-        return 0 if flag==float('inf') else flag
-
-    #双指针+滑动窗口
-    def minSubArrayLen1(self, s: int, nums: List[int]) -> int:
-        n = len(nums)
-        l = 0
-        res = float("inf")
-        tmp = 0
-        for r in range(n):
-            tmp += nums[r]
-            while (tmp >= s):
-                res = min(res, r - l + 1)
-                tmp -= nums[l]
-                l += 1
-        return res if (res != float("inf")) else 0
-
     ##二分法 因为涉及到 "连续子数组"，一旦提到连续二字，我们想到可以通过 二分法 来简化处理。时间复杂度：O(nlog(n))。
     #其实二分查找的关键就是那个递增的有序数列，从而可以每次抛弃一半的可选解。
     def minSubArrayLen2(self, s: int, nums: List[int]) -> int:
