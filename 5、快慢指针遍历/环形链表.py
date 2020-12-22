@@ -8,43 +8,25 @@
 #
 #
 #  进阶：
-#
 #  你能用 O(1)（即，常量）内存解决此问题吗？
 #
-#
-#
 #  示例 1：
-#
-#
-#
 #  输入：head = [3,2,0,-4], pos = 1
 # 输出：true
 # 解释：链表中有一个环，其尾部连接到第二个节点。
 #
-#
 #  示例 2：
-#
-#
-#
 #  输入：head = [1,2], pos = 0
 # 输出：true
 # 解释：链表中有一个环，其尾部连接到第一个节点。
 #
-#
 #  示例 3：
-#
-#
 #
 #  输入：head = [1], pos = -1
 # 输出：false
 # 解释：链表中没有环。
 #
-#
-#
-#
 #  提示：
-#
-#
 #  链表中节点的数目范围是 [0, 104]
 #  -105 <= Node.val <= 105
 #  pos 为 -1 或者链表中的一个 有效索引 。
@@ -56,9 +38,39 @@ class ListNode:
         self.next = None
 
 class Solution:
-    def hasCycle(self, head: ListNode) -> bool:
-        pass
+    def add_tail(self,lists):
+        head=ListNode(lists[0])
+        tail=head
+        for i in lists[1:]:
+            node=ListNode(i)
+            tail.next=node
+            tail=node
+        tail.next=head
+        return head
 
+    def hasCycle(self, head: ListNode) -> bool:
+        if not head or head.next is None:
+            return False
+        fast=head.next
+        slow=head
+
+        while slow != fast:
+            if not fast or not fast.next:
+                return False
+            slow=slow.next
+            fast=fast.next.next
+        return True
+
+
+    def items(self,head):
+        if not head:
+            return None
+        while head:
+            print(head.val)
+            head=head.next
 
 if __name__ == '__main__':
-    pass
+    head=[3,2,0,-4]
+    s=Solution()
+    tail=s.add_tail(head)
+    s.items(tail)
