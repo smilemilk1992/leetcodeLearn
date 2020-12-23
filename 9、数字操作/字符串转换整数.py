@@ -52,11 +52,32 @@
 """
 __author__ = 'haochen214934'
 class Solution:
+
     def myAtoi(self, s: str) -> int:
-        pass
+        res=""
+        s=s.strip()
+        for i,k in enumerate(s):
+            isnum=k.isdigit()
+            if i==0 and (k=="-" or k=="+"):
+                res = res + k
+            elif isnum:
+                res=res+k
+            else:
+                break
+        if res and "+" != res and "-"!=res:
+            res=int(res)
+            if res<-2**31:
+                return -2**31
+            elif res>2**31-1:
+                return 2**31-1
+            else:
+                return res
+        else:
+            return 0
 
 
 if __name__ == '__main__':
     s=Solution()
-    strs="4193 with words"
-    s.myAtoi(strs)
+    strs="122344"
+    nums=s.myAtoi(strs)
+    print(nums)

@@ -1,4 +1,6 @@
 #http://tengj.top/2017/03/09/springboot3/
+#https://blog.lqdev.cn/2018/07/16/springboot/chapter-six/
+约定优于配置
 /**
  * https://blog.csdn.net/wangbiao007/article/details/101020426
  * @ComponentScan(" ") 扫包范围默认当前类所在的整个包下面所有类，意思是@ComponentScan(" ")注解扫包他只能扫web包下面的类，它不能扫test包下面的类
@@ -39,3 +41,90 @@
     2、@ComponentScan(" ")要依赖于@EnableAutoConfiguration才能启动程序，自己不能启动springboot项目
     3、扫描范围大于@EnableAutoConfiguration
     4、这个注解就是定义你需要扫描的路径，然后把路径下的配置了@Component（或者@Controller, @Service, @Repository）的放到spring容器里面，可以供其他类引用
+    5、组件扫描，可自动发现和装配一些Bean
+
+
+@Configuration
+    1、同一个对象
+    2、@Configuration中所有带@Bean注解的方法都会被动态代理，调用该方法返回的都是同一个实例。
+    3、configuration是声明一个配置项，即相当于新增一个xml文件
+    4、和@Bean一起工作
+@Component
+    1、不同对象
+    2、@Component 注解并没有通过cglib来代理@Bean方法的调用，因此调用带@Bean注解的方法态返回的都是新的实例。
+    3、component是生成一个实体，类似于xml中定义一个bean
+    4、把普通pojo实例化到spring容器中，相当于配置文件中的<bean id="" class=""/>
+    5、泛指组件，当组件不好归类的时候，我们可以使用这个注解进行标注。
+
+
+@controller
+    1、控制器（注入服务）
+    2、用于标注控制层组件(如struts中的action)
+@service
+    1、服务（注入dao）
+    2、用于标注业务层组件
+@repository
+    1、用于标注数据访问组件，即DAO组件，主要是数据库存储库
+    2、用于标注控制层组件(如struts中的action)
+    3、作用于持久层
+
+@Autowired
+    1、自动装配
+    2、按byType自动注入
+@Qualifier
+    1、多个同一类型bean 用@Qualifier("name")注解指定 与@Autowired配合使用
+@Primary
+    1、指定默认注入的bean消除歧义
+@Resource(name="name",type="type")
+    1、默认按 byName自动注入
+    2、Spring将@Resource注解的name属性解析为bean的名字，而type属性则解析为bean的类型。所以如果使用name属性，则使用byName的自动注入策略，而使用type属性时则使用byType自动注入策略。
+        如果既不指定name也不指定type属性，这时将通过反射机制使用byName自动注入策略。
+@Bean
+    1、@Bean是spring 3.0 引入的，和 @Configuration一起工作，为了摆脱原先的xml和java config方式。
+    2、@Bean 需要在配置类中使用，即类上需要加上@Component或者@Configuration注解， 通常加上@Configuration
+@PostContruct
+    1、是spring框架的注解，在方法上加该注解会在项目启动的时候执行该方法，也可以理解为在spring容器初始化的时候执行该方法。
+    2、被@PostConstruct修饰的方法会在服务器加载Servlet的时候运行，并且只会被服务器调用一次，类似于Serclet的inti()方法。被@PostConstruct修饰的方法会在构造函数之后，init()方法之前运行。
+    3、父类静态变量或静态语句块–>子类静态变量或静态语句块->父类实例变量或初始化语句块–>父类构造方法->子类实例变量或初始化语句块->子类构造方法--> @Autowired -> @PostConstruct....->destroy->@PreDestroy
+    4、应用场景：
+        4.1、spring 项目加载数据字典
+        4.2、spring项目的定时任务
+    5、在Bean初始化之后（构造方法和@Autowired之后）执行指定操作。经常用在将构造方法中的动作延迟。
+    6、Bean初始化时候的执行顺序： 构造方法 -> @Autowired -> @PostConstruct
+
+@Controller 和 @RestController
+    1、@RestController 是Spring4之后加入的注解，原来在@Controller中返回json需要@ResponseBody来配合，如果直接用@RestController替代@Controller就不需要再配置@ResponseBody，默认返回json格式。而@Controller是用来创建处理http请求的对象，一般结合@RequestMapping使用。
+
+@RequestMapping
+    1、一个用来处理请求地址映射的注解，可用于类或方法上。用于类上，表示类中的所有响应请求的方法都是以该地址作为父路径。
+
+@GetMapping 等同于 @RequestMapping(method = RequestMethod.GET)
+@PostMapping 等同于 @RequestMapping(method = RequestMethod.POST)
+@PutMapping 等同于 @RequestMapping(method = RequestMethod.PUT)
+@DeleteMapping 等同于 @RequestMapping(method = RequestMethod.DELETE)
+@PatchMapping 等同于 @RequestMapping(method = RequestMethod.PATCH)
+
+@RequestBody和@ResponseBody
+    1、@RequestBody注解允许request的参数在reqeust体中，常常结合前端POST请求，进行前后端交互。
+    2、@ResponseBody注解支持将的参数在reqeust体中，通常返回json格式给前端。
+
+@PathVariable、@RequestParam、@RequestAttribute
+    1、@PathVariable用来接收参数,如/path/001,可接收001作为参数
+    @GetMapping("/path/{id}")
+    public String PathVariable(@PathVariable("id") String id){}
+
+    2、@RequestParam 用来接收URL中的参数,如/param?id=001,可接收001作为参数
+    @GetMapping("/param")
+    public String RequestParam(@RequestParam("id") String id){}
+
+    3、@RequestAttribute用于访问由过滤器或拦截器创建的、预先存在的请求属性，效果等同与request.getAttrbute()
+    @GetMapping("/req/attr")
+    public String RequestAttribute(@RequestAttribute("id") String id){}
+
+
+@ControllerAdvice：控制器增强，使@ExceptionHandler、@InitBinder、@ModelAttribute注解的方法应用到所有的 @RequestMapping注解的方法。
+    1、基于@ControllerAdvice注解的全局异常统一处理只能针对于Controller层的异常，意思是只能捕获到Controller层的异常，在service层或者其他层面的异常都不能捕获
+@ExceptionHandler：异常处理器，此注解的作用是当出现其定义的异常时进行处理的方法
+
+
+@RestControllerAdvice : 和@ControllerAdvice作用相同，可以理解为 @ResponseBody+@ControllerAdvice 的组合使用。
