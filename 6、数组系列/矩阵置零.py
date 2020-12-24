@@ -52,20 +52,60 @@ from typing import List
 
 
 class Solution:
-
-    #用每行和每列的第一个元素作为标记，空间复杂度是o(1)，时间复杂度 o(m*n)
+    '''
+    即分别定义两个list : zeroLine 和 zeroRow来储存出现零的位置。
+    '''
     def setZeroes(self, matrix: List[List[int]]) -> None:
         """
         Do not return anything, modify matrix in-place instead.
         """
-        pass
+        lenrow = len(matrix)
+        lencol = len(matrix[0])
+        zeroRow = [False] * lenrow
+        zeroCol = [False] * lencol
 
+        for l in range(lenrow):
+            for r in range(lencol):
+                if matrix[l][r] == 0:
+                    zeroRow[l] = True
+                    zeroCol[r] = True
+
+        for l in range(lenrow):
+            if zeroRow[l] is True:
+                matrix[l] = [0] * lencol
+            else:
+                for r in range(lencol):
+                    if zeroCol[r] is True:
+                        matrix[l][r] = 0
+        return matrix
+
+    def setZeroes1(self, matrix: List[List[int]]) -> None:
+        row=len(matrix)
+        col=len(matrix[0])
+        flagRow=[False]*row
+        flagCol=[False]*col
+        for i in range(row):
+            for j in range(col):
+                if matrix[i][j]==0:
+                    flagRow[i]=True
+                    flagCol[j]=True
+
+        for i in range(row):
+            if flagRow[i]==True:
+                matrix[i]=[0]*col
+            else:
+                for j in range(col):
+                    if flagCol[j]==True:
+                        matrix[i][j]=0
+        return matrix
 
 if __name__ == '__main__':
     s = Solution()
     matrix = [
         [0, 1, 2, 0],
-        [3, 4, 5, 2],
+        [3, 4, 0, 2],
         [1, 3, 1, 5]
     ]
-    s.setZeroes()
+    flag = s.setZeroes1(matrix)
+    print(flag)
+
