@@ -96,4 +96,5 @@ if __name__ == '__main__':
     S=Solution()
     s = "LEETCODEISHIRING"
     numRows = 4
-    S.convert1(s,numRows)
+    flag=S.convert1(s,numRows)
+    print(flag)

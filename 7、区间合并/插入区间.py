@@ -41,4 +41,5 @@ if __name__ == '__main__':
     s=Solution()
     intervals = [[1, 2], [3, 5], [6, 7], [8, 10], [12, 16]]
     newInterval = [4, 8]
-    s.insert(intervals,newInterval)
+    flag=s.insert(intervals,newInterval)
+    print(flag)

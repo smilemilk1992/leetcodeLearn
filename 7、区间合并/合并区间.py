@@ -44,4 +44,5 @@ class Solution:
 if __name__ == '__main__':
     s=Solution()
     intervals = [[1, 3], [2, 6], [8, 10], [15, 18]]
-    s.merge(intervals)
+    flag=s.merge(intervals)
+    print(flag)

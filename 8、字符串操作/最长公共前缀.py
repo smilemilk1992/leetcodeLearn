@@ -48,7 +48,7 @@ class Solution:
 
 
 if __name__ == '__main__':
-    strs=["dog","racecar","car"]
+    strs=["flower","flow","flight"]
     s=Solution()
     flag=s.longestCommonPrefix(strs)
     print(flag)
