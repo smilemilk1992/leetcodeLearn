@@ -45,7 +45,6 @@ class Solution(object):
             alist[high] = alist[low]  # 此时low指向一个比基准元素大的元素,将low指向的元素放到high空着的位置上,此时low指向的位置空着,之后进行下一次循环,将high找到符合条件的元素填到此处
         # 退出循环后，low与high重合，此时所指位置为基准元素的正确位置,左边的元素都比基准元素小,右边的元素都比基准元素大
         alist[low] = mid  # 将基准元素放到该位置,
-        print(num)
         # 对基准元素左边的子序列进行快速排序
         self.quick_sort(alist, start, low - 1)  # start :0  low -1 原基准元素靠左边一位
         # 对基准元素右边的子序列进行快速排序

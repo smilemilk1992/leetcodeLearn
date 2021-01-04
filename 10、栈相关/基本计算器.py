@@ -31,9 +31,37 @@ __author__ = 'haochen214934'
 
 class Solution:
     def calculate(self, s: str) -> int:
-        pass
+        stack = []
+        operand = 0
+        res = 0
+        sign = 1
+        for ch in s:
+            if ch.isdigit():#(1+(4+5+2)-3)+(6+8)
+                operand = (operand * 10) + int(ch)
+            elif ch == '+':
+                res += sign * operand
+                sign = 1
+                operand = 0
+            elif ch == '-':
+                res += sign * operand
+                sign = -1
+                operand = 0
+            elif ch == '(':
+                stack.append(res)
+                stack.append(sign)
+                sign = 1
+                res = 0
+            elif ch == ')':
+                res += sign * operand
+                res *= stack.pop()  # stack pop 1, sign
+                res += stack.pop()  # stack pop 2, res
+                # Reset the operand
+                operand = 0
+
+        return res + sign * operand
 
 if __name__ == '__main__':
     s=Solution()
     x="(1+(4+5+2)-3)+(6+8)"
-    s.calculate(x)
+    flag=s.calculate(x)
+    print(flag)
