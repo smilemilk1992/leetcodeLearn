@@ -47,12 +47,9 @@ def heap_sort(elems):
 
     end = len(elems)
     for i in range(end // 2 - 1, -1, -1):  # 若想得到降序，则建立小顶堆
-        print(i,elems[i])
         siftdown(elems, elems[i], i, end)
 
-
     for i in range((end - 1), 0, -1):  # 进行堆排序.i最后一个值为1，不需要到0 倒叙
-        print(elems)
         e = elems[i]  # 将末尾元素赋给e
         elems[i] = elems[0]  # 交换堆顶与最后一个元素
         siftdown(elems, e, 0, i)

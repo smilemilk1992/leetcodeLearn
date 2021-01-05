@@ -48,7 +48,7 @@ class Solution:
         self.quick(nums,start,low-1)
         self.quick(nums,low+1,end)
 
-    #快速排序
+    #快速排序-分治算法
     def findKthLargest(self, nums: List[int], k: int) -> int:
         self.quick(nums,0,len(nums)-1)
         return nums[len(nums)-k]

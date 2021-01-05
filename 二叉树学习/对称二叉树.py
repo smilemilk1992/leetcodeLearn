@@ -50,8 +50,8 @@ class TreeNode:
 class Solution:
     #判断是否是对称二叉树
     def isSymmetric(self, root: TreeNode) -> bool:#迭代
-        if root is None:
-            return False
+        if not root:
+            return True
         queue=[root]
         while queue:
             flag=[]
