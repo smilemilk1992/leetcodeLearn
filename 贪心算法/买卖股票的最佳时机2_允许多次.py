@@ -59,3 +59,4 @@ if __name__ == '__main__':
     prices=[3,3,5,0,0,3,1,4]
     money =s.maxProfit(prices)
     print(money)
+

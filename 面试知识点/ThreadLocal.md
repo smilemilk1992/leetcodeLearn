@@ -56,5 +56,30 @@ ThreadLocal 的特性也导致了应用场景比较广泛，主要的应用场�
 * 线程间数据隔离，各线程的 ThreadLocal 互不影响
 * 方便同一个线程使用某一对象，避免不必要的参数传递
 * 全链路追踪中的 traceId 或者流程引擎中上下文的传递一般采用 ThreadLocal
-* Spring 事务管理器采用了 ThreadLocal
+* Spring 事务管理器采用了 ThreadLocal-https://www.zhihu.com/question/341005993
+    Spring采用Threadlocal的方式，来保证单个线程中的数据库操作使用的是同一个数据库连接，同时，采用这种方式可以使业务层使用事务时不需要感知并管理connection对象，通过传播级别，巧妙地管理多个事务配置之间的切换，挂起和恢复。
 * Spring MVC 的 RequestContextHolder 的实现使用了 ThreadLocal
+
+
+Thread是以时间换空间的方式，而ThreadLocal是以空间换时间的方式，
+
+如果我想共享线程的ThreadLocal数据怎么办？
+* 使用InheritableThreadLocal可以实现多个线程访问ThreadLocal的值，我们在主线程中创建一个InheritableThreadLocal的实例，然后在子线程中得到这个InheritableThreadLocal实例设置的值。
+```text
+final ThreadLocal threadLocal = new InheritableThreadLocal();       
+threadLocal.set("帅得一匹");    
+Thread t = new Thread() {        
+    @Override        
+    public void run() {            
+      super.run();            
+      Log.i( "张三帅么 =" + threadLocal.get());        
+    }    
+  };          
+  t.start();
+```
+
+那为什么ThreadLocalMap的key要设计成弱引用？
+
+* key不设置成弱引用的话就会造成和entry中value一样内存泄漏的场景。补充一点：ThreadLocal的不足，我觉得可以通过看看netty的fastThreadLocal来弥补，大家有兴趣可以康康。
+
+
