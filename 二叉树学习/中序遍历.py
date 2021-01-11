@@ -36,6 +36,7 @@ class Solution:
                 flag.append(root)
                 root=root.left
             root=flag.pop()
+            print(root.val)
             root=root.right
 
 
