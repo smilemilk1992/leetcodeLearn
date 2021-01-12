@@ -63,12 +63,15 @@ class Solution:
     #迭代
     def inorderTraversal1(self, root: TreeNode) -> List[int]:
         res=[]
+        flag = []
         while root or res:
             while root:
                 res.append(root)
                 root=root.left
             root=res.pop()
+            flag.append(root.val)
             root=root.right
+        return flag
 
 if __name__ == '__main__':
     node2=TreeNode(2)
