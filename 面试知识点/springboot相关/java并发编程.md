@@ -82,6 +82,8 @@
 
     volatile 保证内存可见性和禁止指令重排。
     volatile 用于多线程环境下的单次操作(单次读或者单次写)。
+    像 long 和 double 都不是原子的，但 volatile 类型的 double 和 long 就是原子的。
+
 
 11、Java如何在两个线程之间共享数据？
 
@@ -161,3 +163,13 @@
     2、cyclicBarrier 是所有线程都进行等待，直到所有线程都准备好进入 await()方 法之后，所有线程同时开始执行！ 
     3、CountDownLatch 的计数器只能使用一次。而 CyclicBarrier 的计数器可以使 用 reset() 方法重置。所以 CyclicBarrier 能处理更为复杂的业务场景，比如如果 计算发生错误，可以重置计数器，并让线程们重新执行一次。 
     4、CyclicBarrier 还提供其他有用的方法，比如 getNumberWaiting 方法可以获 得 CyclicBarrier阻塞的线程数量。isBroken方法用来知道阻塞的线程是否被中断。 如果被中断返回 true，否则返回 false
+    
+25、Java 中，编写多线程程序的时候你会遵循哪些最佳实践？
+
+    这是我在写 Java 并发程序的时候遵循的一些最佳实践： 
+    a）给线程命名，这样可以帮助调试。 
+    b）最小化同步的范围，而不是将整个方法同步，只对关键部分做同步。 
+    b）最小化同步的范围，而不是将整个方法同步，只对关键部分做同步。 
+    c）如果可以，更偏向于使用 volatile 而不是 synchronized。 
+    d）使用更高层次的并发工具，而不是使用 wait() 和 notify() 来实现线程间通 信，如 BlockingQueue，CountDownLatch 及 Semeaphore。 
+    e）优先使用并发集合，而不是对集合进行同步。并发集合提供更好的可扩展性。
