@@ -112,7 +112,7 @@ if __name__ == '__main__':
     # rightTree3 = TreeNode(1)
     # rightTree3.left = rightTree1
     # rightTree3.right = rightTree2
-
+    #
     # rightTree1 = TreeNode(2)
     # rightTree1.right = TreeNode(3)
     # rightTree2 = TreeNode(2)

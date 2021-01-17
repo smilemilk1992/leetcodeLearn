@@ -173,3 +173,5 @@
     c）如果可以，更偏向于使用 volatile 而不是 synchronized。 
     d）使用更高层次的并发工具，而不是使用 wait() 和 notify() 来实现线程间通 信，如 BlockingQueue，CountDownLatch 及 Semeaphore。 
     e）优先使用并发集合，而不是对集合进行同步。并发集合提供更好的可扩展性。
+
+26、线程池的工作原理，几个重要参数，然后给了具体几个参数分析线程池会怎么做，最后问阻塞队列会怎么做

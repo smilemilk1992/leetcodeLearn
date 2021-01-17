@@ -41,6 +41,9 @@ class Solution:
         while plow<phigh and phigh<len(s) and plow<len(s):
             if s[phigh] not in s[plow:phigh]:
                 phigh=phigh+1
+                _max = len(s[plow:phigh])
+                if _max >= max:
+                    max = _max
             elif phigh-plow==1:
                 result.append(s[plow:phigh])
                 _max = len(s[plow:phigh])
@@ -58,6 +61,6 @@ class Solution:
 
 
 if __name__ == '__main__':
-    s="abcdawwkjhga"
+    s="aux"
     a=Solution()
     a.lengthOfLongestSubstring(s)

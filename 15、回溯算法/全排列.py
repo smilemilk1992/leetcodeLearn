@@ -34,8 +34,8 @@ class Solution(object):
 
     def dfs(self, nums: List[int], track: List[int]):
         if len(track) == len(nums):
-            tmp=track.copy() #需要用到copy来实现复制已有列表的功能，否则用简单的a = b就会把同一个列表指向a，
-            self.ans.append(tmp)
+            # tmp=track.copy() #需要用到copy来实现复制已有列表的功能，否则用简单的a = b就会把同一个列表指向a，
+            self.ans.append(list(track))
         else:
             for num in nums:
                 if num not in track:
