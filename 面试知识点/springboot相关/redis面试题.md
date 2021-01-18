@@ -153,3 +153,7 @@ Redis 集群没有使用一致性 hash,而是引入了哈希槽的概念，Redis
 先拿 setnx 来争抢锁，抢到之后，再用 expire 给锁加一个过期时间防止锁忘记了 释放。
 
 
+# redis为什么那么快-https://www.toutiao.com/i6916758138347815438/?tt_from=weixin&utm_campaign=client_share&wxshare_count=1&timestamp=1610671141&app=news_article&utm_source=weixin&utm_medium=toutiao_ios&use_new_style=1&req_id=2021011508390001020402804528146060&share_token=7B249A92-4F1B-4945-BDCE-667907933744&group_id=6916758138347815438
+1、Redis 是一款纯内存结构，避免了磁盘 I/O 等耗时操作。
+2、Redis 命令处理的核心模块为单线程，减少了锁竞争，以及频繁创建线程和销毁线程的代价，减少了线程上下文切换的消耗。
+3、采用了 I/O 多路复用机制，大大提升了并发效率。
