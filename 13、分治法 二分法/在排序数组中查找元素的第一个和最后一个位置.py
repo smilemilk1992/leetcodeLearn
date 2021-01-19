@@ -41,6 +41,7 @@ from typing import List
 class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
         left,right=self.lowwer_bound(nums,target),self.higher_bound(nums,target)
+        print(left,right)
         if left==right:
             return [-1,-1]
         else:
@@ -69,7 +70,7 @@ class Solution:
 
 if __name__ == '__main__':
     s=Solution()
-    nums = [1,2,2,2,3,4,5]
-    target = 2
+    nums = [5,7,7,8,8,10]
+    target = 8
     flag=s.searchRange(nums,target)
     print(flag)
