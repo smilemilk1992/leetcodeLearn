@@ -1,6 +1,7 @@
 # ThreadLocal 知识点 JDK1.8 https://zhuanlan.zhihu.com/p/130226698
 # 1、什么是ThreadLocal
-ThreadLocal 是 Java 里一种特殊变量，它是一个线程级别变量，每个线程都有一个 ThreadLocal 就是每个线程都拥有了自己独立的一个变量，竞态条件被彻底消除了，在并发模式下是绝对安全的变量。
+ThreadLocal 是 Java 里一种特殊变量，它是一个线程级别变量，每个线程都有一个 ThreadLocal 就是每个线程都拥有了自己独立的一个变量，
+竞态条件被彻底消除了，在并发模式下是绝对安全的变量。
 
 可以通过 ThreadLocal<T> value = new ThreadLocal<T>(); 来使用。
 
