@@ -33,6 +33,5 @@ class Solution:
             pnext=cur.next
             cur.next=pre
             pre=cur
-
             cur=pnext
         return pre

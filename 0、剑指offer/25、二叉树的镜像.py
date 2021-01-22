@@ -38,6 +38,7 @@ class TreeNode:
         self.right = None
 
 class Solution:
+    #反转二叉树
     def mirrorTree(self, root: TreeNode) -> TreeNode:
         if not root:
             return root
