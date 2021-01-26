@@ -41,4 +41,5 @@ class Solution:
 if __name__ == '__main__':
     s=Solution()
     n=11111111111111111111111111111101
-    s.hammingWeight(n)
+    f=s.hammingWeight(n)
+    print(f)

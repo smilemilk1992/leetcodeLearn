@@ -24,9 +24,9 @@ class Solution:
         i, j = 0, len(numbers) - 1
         while i < j:
             m = (i + j) // 2
-            if numbers[m] < numbers[j]:#左边连续
+            if numbers[m] < numbers[j]:
                 j = m
-            elif numbers[m] > numbers[j]:#右边连续
+            elif numbers[m] > numbers[j]:
                 i = m + 1
             else:
                 j -= 1

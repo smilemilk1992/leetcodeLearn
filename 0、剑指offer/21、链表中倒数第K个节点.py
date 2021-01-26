@@ -16,7 +16,7 @@ class ListNode:
         self.next = None
 
 class Solution:
-    def reverse(self,head):#反转链表
+    def reverse(self,head):
         count=0
         root=head
         while root:
