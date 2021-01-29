@@ -30,3 +30,5 @@ dubbo 服务发布之后，我们可以利用 telnet 命令进行调试、管理
 
 # 、Dubbo 如何优雅停机？
 Dubbo 是通过 JDK 的 ShutdownHook 来完成优雅停机的,但能实现优雅停机的前提是，在启动时，需要指定参数-Ddubbo.shutdown.hook=true：，所以如果使用 kill -9 PID 等强制关闭指令，是不会执行优雅停机的，只有通过 kill PID 时，才 会执行。
+
+#、Dubbo整体流程
