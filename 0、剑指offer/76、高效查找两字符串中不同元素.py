@@ -39,23 +39,3 @@ if __name__ == '__main__':
     f=s.find(list1,list2)
     print(f)
 
-'''
-存储：
-    mysql
-    活动id,用户id,好友id,砍价钱数,请求时间
-    
-    redis缓存 保证幂等性
-    key：活动id+用户id+好友id
-    value:时间戳
-    
-    redis 分布式锁
-    根据 活动id+用户id 设置锁 同一个用户id发过来的请求都会有序请求接口
-    
-    redis INCR自增
-     返回 11-num>0:
-     :return 11-num
-     else:
-     :return 谢谢您的帮助
-    
-    
-'''
