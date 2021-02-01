@@ -51,6 +51,22 @@ class Solution:
                 low=mid+1
         return False
 
+    def findNumberIn2DArray1(self, matrix: List[List[int]], target: int) -> bool:
+        m=len(matrix)
+        n=len(matrix[0])
+        row=0
+        column=n-1
+
+        while row<m and column>0:
+            if matrix[row][column]>target:
+                column=column-1
+            elif matrix[row][column]<target:
+                row=row+1
+            else:
+                return True
+        return False
+
+
 
 
 if __name__ == '__main__':
@@ -62,6 +78,6 @@ if __name__ == '__main__':
         [10, 13, 14, 17, 24],
         [18, 21, 23, 26, 30]
     ]
-    target=21
-    f=s.findNumberIn2DArray(matrix,target)
+    target=25
+    f=s.findNumberIn2DArray1(matrix,target)
     print(f)

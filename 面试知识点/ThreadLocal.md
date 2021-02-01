@@ -84,3 +84,13 @@ Thread t = new Thread() {
 * key不设置成弱引用的话就会造成和entry中value一样内存泄漏的场景。补充一点：ThreadLocal的不足，我觉得可以通过看看netty的fastThreadLocal来弥补，大家有兴趣可以康康。
 
 
+如何解决哈希冲突？
+ ThreadLocalMap 类的底层数据结构是一个 Entry 类型的数组
+ 基于斐波那契散列法获取当前 ThreadLocal 对象的散列值之后进入了一个循环，在循环中是处理具体处理哈希冲突的方法：
+     如果散列值已存在且 key 为同一个对象，直接更新 value
+    如果散列值已存在但 key 不是同一个对象，尝试在下一个空的位置进行存储
+    
+所以，来总结一下 ThreadLocal 处理哈希冲突的方式就是：
+**如果在 set 时遇到哈希冲突，ThreadLocal 会通过线性探测法尝试在数组下一个索引位置进行存储，
+同时在 set 过程中 ThreadLocal 会释放 key 为 NULL，
+value 不为 NULL 的脏 Entry对象的 value 属性来防止内存泄漏 **。
