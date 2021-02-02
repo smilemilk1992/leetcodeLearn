@@ -66,4 +66,5 @@ class Solution:
 if __name__ == '__main__':
     s=Solution()
     grid = [[1, 3, 1], [1, 5, 1], [4, 2, 1]]
-    s.minPathSum(grid)
+    f=s.minPathSum(grid)
+    print(f)

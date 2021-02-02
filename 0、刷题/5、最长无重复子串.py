@@ -31,5 +31,5 @@ class Solution:
 
 if __name__ == '__main__':
     s=Solution()
-    strs="ababc"
+    strs="abcd"
     s.lengthOfLongestSubstring(strs)

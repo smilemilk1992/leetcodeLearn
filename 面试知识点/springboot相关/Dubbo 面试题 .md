@@ -23,13 +23,15 @@ https://www.cnblogs.com/hetutu-5238/p/11958615.html
 可以结合 zipkin 实现分布式服务追踪。
 
 # 、Dubbo 配置文件是如何加载到Spring中的
-Spring 容器在启动的时候，会读取到 Spring 默认的一些 schema 以及 Dubbo 自 定义的 schema，每个 schema 都会对应一个自己的 NamespaceHandler， NamespaceHandler 里面通过 BeanDefinitionParser 来解析配置信息并转化为 需要加载的 bean 对象！
+Spring 容器在启动的时候，会读取到 Spring 默认的一些 schema 以及 Dubbo 自 定义的 schema，
+每个 schema 都会对应一个自己的 NamespaceHandler， NamespaceHandler 里面通过 BeanDefinitionParser 来解析配置信息并转化为 需要加载的 bean 对象！
 
 # Dubbo telnet 命令能做什么？
 dubbo 服务发布之后，我们可以利用 telnet 命令进行调试、管理。 Dubbo2.0.5 以上版本服务提供端口支持 telnet 命令
 
 # 、Dubbo 如何优雅停机？
-Dubbo 是通过 JDK 的 ShutdownHook 来完成优雅停机的,但能实现优雅停机的前提是，在启动时，需要指定参数-Ddubbo.shutdown.hook=true：，所以如果使用 kill -9 PID 等强制关闭指令，是不会执行优雅停机的，只有通过 kill PID 时，才 会执行。
+Dubbo 是通过 JDK 的 ShutdownHook 来完成优雅停机的,但能实现优雅停机的前提是，在启动时，需要指定参数-Ddubbo.shutdown.hook=true：，
+所以如果使用 kill -9 PID 等强制关闭指令，是不会执行优雅停机的，只有通过 kill PID 时，才 会执行。
 
 #、Dubbo整体流程
 zk在dubbo中是服务注册与发现的注册中心,dubbo的调用过程是consumer和provider在启动的时候就和注册中心建立一个socket长连接。
