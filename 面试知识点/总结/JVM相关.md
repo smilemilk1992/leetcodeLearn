@@ -135,10 +135,16 @@ Map的key和value都可以是任何类型。但要注意的是，一定要重写
 2、如果对象够老，超过15
 3、分配担保。当 Survivor 空间不够的时候，就需要依赖其他内存（指老年代）进行分配担保。这个时候，对象也会直接在老年代上分配。
 #MinorGC，MajorGC、FullGC都什么时候发生？
-MinorGC在年轻代空间不足的时候发生，MajorGC指的是老年代的GC，出现MajorGC一般经常伴有MinorGC。
+MinorGC在年轻代空间不足的时候发生，MajorGC指的是老年代的GC（标记清除），出现MajorGC一般经常伴有MinorGC。
 FullGC有三种情况。
     当老年代无法再分配内存的时候
     元空间不足的时候
     显示调用System.gc的时候。另外，像CMS一类的垃圾回收器，在MinorGC出现promotion failure的时候也会发生FullGC
 #什么情况下会发生栈溢出？
 栈的大小可以通过-Xss参数进行设置，当递归层次太深的时候，就会发生栈溢出。比如循环调用，递归等。
+
+#cms碎片整理
+-XX:+UseCMSCompactAtFullCollection  强制进行空间碎片整理
+CMS 采用标记算法，会产生大量的空间碎片。以上参数就是强制执行一次空间碎片整理，但是空间碎片整理会引发STW。
+-XX:+CMSFullGCsBeforeCompaction 配置经过几次的FullGC进行空间碎片整理
+-XX:+CMSFullGCsBeforeCompaction=10  经过10次FGC后进行空间碎片整理，以降低STW次数
