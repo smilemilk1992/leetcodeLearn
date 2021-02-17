@@ -22,11 +22,7 @@ class Solution:
     def topN(self, Lists, k):
         m=len(Lists)
         n=len(Lists[0])
-        res=[Lists[0][0]]
-        for i in range(1,m):
-            for j in range(1,n):
-                print(Lists[i][j])
-
+        res=Lists[0]
 
 
 if __name__ == '__main__':
@@ -36,7 +32,7 @@ if __name__ == '__main__':
         [2,  5,  8,  12, 19],
         [3,  6,  9,  16, 22],
         [10, 13, 14, 17, 24],
-        [18, 21, 23, 26, 30]
+        [18, 21, 23, 25, 26]
     ]
     k = 2
     s.topN(matrix, k)

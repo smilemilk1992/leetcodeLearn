@@ -148,3 +148,8 @@ FullGC有三种情况。
 CMS 采用标记算法，会产生大量的空间碎片。以上参数就是强制执行一次空间碎片整理，但是空间碎片整理会引发STW。
 -XX:+CMSFullGCsBeforeCompaction 配置经过几次的FullGC进行空间碎片整理
 -XX:+CMSFullGCsBeforeCompaction=10  经过10次FGC后进行空间碎片整理，以降低STW次数
+
+#G1配置
+-Xmx 6g -Xms 6g -XX:MetaspaceSize=96m -XX:+UseG1GC -XX:MaxGCPauseMillis=20
+-XX:InitiatingHeapOccupancyPercent=35 -XX:G1HeapRegionSize=16M
+-XX:MinMetaspaceFreeRatio=50 -XX:MaxMetaspaceFreRatio=80
