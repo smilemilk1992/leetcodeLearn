@@ -38,5 +38,5 @@ class Solution:
 if __name__ == '__main__':
     s=Solution()
     nums=[2, 3, 1, 0, 2, 5, 3]
-    f=s.findRepeatNumber1(nums)
+    f=s.findRepeatNumber(nums)
     print(f)
