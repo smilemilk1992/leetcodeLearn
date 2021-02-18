@@ -33,6 +33,11 @@ dubbo 服务发布之后，我们可以利用 telnet 命令进行调试、管理
 Dubbo 是通过 JDK 的 ShutdownHook 来完成优雅停机的,但能实现优雅停机的前提是，在启动时，需要指定参数-Ddubbo.shutdown.hook=true：，
 所以如果使用 kill -9 PID 等强制关闭指令，是不会执行优雅停机的，只有通过 kill PID 时，才 会执行。
 
+服务的优雅停机：
+    在Dubbo中，优雅停机是默认开启的，停机等待时间为10000毫秒。可以通过配置dubbo.service.shutdown.wait来修改等待时间。
+容器的优雅停机：
+    当使用org.apache.dubbo.container.Main这种容器方式来使用 Dubbo 时，也可以通过配置dubbo.shutdown.hook为true来开启优雅停机。
+
 #、Dubbo整体流程
 zk在dubbo中是服务注册与发现的注册中心,dubbo的调用过程是consumer和provider在启动的时候就和注册中心建立一个socket长连接。
 provider将自己的服务注册到注册中心上,注册中心将可用的提供者列表notify给consumer,consumer会将列表存储到本地缓存,
