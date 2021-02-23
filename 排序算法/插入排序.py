@@ -38,6 +38,7 @@ class Solution(object):
                 nums[j+1]=nums[j] #往后移
                 j=j-1 #继续往前找
             nums[j+1]=current #找到最前面就回过头加1 每趟都需要将待插入元素固定到排序位置
+            print(nums)
         print(nums)
 
 
