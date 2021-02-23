@@ -87,7 +87,8 @@
 13、SQL注入漏洞产生的原因？如何防止？
 
     SQL 注入产生的原因：程序开发过程中不注意规范书写 sql 语句和对特殊字符进 行过滤，导致客户端可以通过全局变量 POST 和 GET 提交一些 sql 语句正常执行。
-    防止 SQL 注入的方式： 开启配置文件中的 magic_quotes_gpc 和 magic_quotes_runtime 设置执行 sql 语句时使用 addslashes 进行 sql 语句转换
+    防止 SQL 注入的方式： 
+    开启配置文件中的 magic_quotes_gpc 和 magic_quotes_runtime 设置执行 sql 语句时使用 addslashes 进行 sql 语句转换
     Sql 语句书写尽量不要省略双引号和单引号。
     过滤掉 sql 语句中的一些关键词：update、insert、delete、select、 * 。
     提高数据库表和字段的命名技巧，对一些重要的字段根据程序的特点命名，取不 易被猜到的。

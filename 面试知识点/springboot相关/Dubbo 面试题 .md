@@ -24,7 +24,7 @@ https://www.cnblogs.com/hetutu-5238/p/11958615.html
 
 # 、Dubbo 配置文件是如何加载到Spring中的
 Spring 容器在启动的时候，会读取到 Spring 默认的一些 schema 以及 Dubbo 自 定义的 schema，
-每个 schema 都会对应一个自己的 NamespaceHandler， NamespaceHandler 里面通过 BeanDefinitionParser 来解析配置信息并转化为 需要加载的 bean 对象！
+每个 schema 都会对应一个自己的 NamespaceHandler， NamespaceHandler 里面通过 BeanDefinitionParser 来解析配置信息并转化为需要加载的 bean 对象！
 
 # Dubbo telnet 命令能做什么？
 dubbo 服务发布之后，我们可以利用 telnet 命令进行调试、管理。 Dubbo2.0.5 以上版本服务提供端口支持 telnet 命令

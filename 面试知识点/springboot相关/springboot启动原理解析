@@ -8,7 +8,7 @@
  * 同时@ComponentScan(" ")要依赖于@EnableAutoConfiguration才能启动程序
  * 同时@ComponentScan(" ")要依赖于@EnableAutoConfiguration才能启动程序，@EnableAutoConfiguration自己可以启动程序，@ComponentScan(" ")自己却不能启动程序
  *
- * .@SpringBootApplication 底层等同于@EnableAutoConfiguration+@ComponentScan。
+ * @SpringBootApplication 底层等同于@EnableAutoConfiguration+@ComponentScan。
  * @ComponentScan和@EnableAutoConfiguration的相同点
  * 两者都可以将带有@Component，@Service等注解的对象加入到ioc容器中。
  *

@@ -25,7 +25,7 @@ Zookeeper 是一个典型的发布/订阅模式的分布式数据管理与协调
 Zookeeper 分布式锁（文件系统、通知机制）
 有了 zookeeper 的一致性文件系统，锁的问题变得容易。锁服务可以分为两类， 一个是保持独占，另一个是控制时序。
 对于第一类，我们将 zookeeper上的一个 znode看作是一把锁，通过 createznode 的方式来实现。所有客户端都去创建 /distribute_lock 节点，最终成功创建的那 个客户端也即拥有了这把锁。用完删除掉自己创建的 distribute_lock 节点就释放 出锁。 
-对于第二类， /distribute_lock 已经预先存在，所有客户端在它下面创建临时顺 序编号目录节点，和选 master 一样，编号最小的获得锁，用完删除，依次方便。
+对于第二类， /distribute_lock 已经预先存在，所有客户端在它下面创建临时顺 序编号目录节点，和选 master 一样，编号最小的获得锁，用完删除，依次类推。
 
 zookeeper 与kafka保持数据一致性的不同点：
 (1)zookeeper使用了ZAB(Zookeeper Atomic Broadcast)协议，保证了leader,follower的一致性，leader 负责数据的读写，而follower只负责数据的读，如果follower遇到写操作，会提交到leader;

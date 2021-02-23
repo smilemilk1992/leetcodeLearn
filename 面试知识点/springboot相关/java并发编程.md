@@ -69,7 +69,9 @@
 
     CAS 缺点：
     1、ABA 问题： 
-    比如说一个线程 one 从内存位置 V 中取出 A，这时候另一个线程 two 也从内存中 取出 A，并且 two 进行了一些操作变成了 B，然后 two 又将 V 位置的数据变成 A， 这时候线程 one 进行 CAS 操作发现内存中仍然是 A，然后 one 操作成功。尽管线 程 one 的 CAS 操作成功，但可能存在潜藏的问题。从 Java1.5 开始 JDK 的 atomic 包里提供了一个类 AtomicStampedReference 来解决 ABA 问题。
+    比如说一个线程 one 从内存位置 V 中取出 A，这时候另一个线程 two 也从内存中 取出 A，并且 two 进行了一些操作变成了 B，然后 two 又将 V 位置的数据变成 A， 
+    这时候线程 one 进行 CAS 操作发现内存中仍然是 A，然后 one 操作成功。尽管线 程 one 的 CAS 操作成功，但可能存在潜藏的问题。
+    从 Java1.5 开始 JDK 的 atomic 包里提供了一个类 AtomicStampedReference 来解决 ABA 问题。
    
     2、循环时间长开销大： 
     对于资源竞争严重（线程冲突严重）的情况，CAS 自旋的概率会比较大，从而浪 费更多的 CPU 资源，效率低于 synchronized。 
