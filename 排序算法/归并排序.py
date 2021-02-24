@@ -63,6 +63,6 @@ class Solution(object):
 
 if __name__ == '__main__':
     s=Solution()
-    nums=[1,4,2,6,5,9,7,8]
+    nums=[1,4,2,3,6,5,9,7,8]
     f=s.mergeSort(nums,0,len(nums)-1)
     print(f)
