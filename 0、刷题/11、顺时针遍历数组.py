@@ -11,7 +11,7 @@ class Solution:
         temp=1 #1 右 2 下 3 左 4 上
         result=[]
         while True:
-            if i>=n or j>=n or flag[i][j]:
+            if i>=m or j>=n or flag[i][j]:
                 break
             result.append(Lists[i][j])
             flag[i][j]=True
