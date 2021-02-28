@@ -29,6 +29,7 @@ from typing import List
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         left,right=self.lowwer_bound(nums,target),self.higher_bound(nums,target)
+        print(left,right)
         if left==right:
             return 0
         else:
@@ -56,7 +57,7 @@ class Solution:
 
 if __name__ == '__main__':
     s=Solution()
-    nums = [5,7,7,8,8,10]
+    nums = [5,7,8,8,8,10]
     target = 8
     f=s.search(nums,target)
     print(f)

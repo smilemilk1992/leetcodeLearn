@@ -27,5 +27,6 @@ class Solution:
 
 if __name__ == '__main__':
     s=Solution()
-    strs = "We are happy."
-    s.replaceSpace(strs)
+    strs = "We are  happy."
+    f=s.replaceSpace(strs)
+    print(f)
