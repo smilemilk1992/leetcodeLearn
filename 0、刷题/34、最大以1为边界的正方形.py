@@ -28,7 +28,7 @@
 #  👍 65 👎 0
 
 
-# leetcode submit region begin(Prohibit modification and deletion)
+
 from typing import List
 
 
@@ -45,4 +45,4 @@ class Solution:
 
         return max_l ** 2
 
-# leetcode submit region end(Prohibit modification and deletion)
+
