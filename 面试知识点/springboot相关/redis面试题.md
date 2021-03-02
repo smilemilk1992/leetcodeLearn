@@ -17,7 +17,20 @@ Redis的所有数据都是保存在内存中，然后不定期的通过异步方
 
 在日常操作中，一般都是从AOF日志中来恢复数据，因为RDB会丢失大量数据。但是AOF恢复数据又会花费较长时间。
 于是从Redis4.0开始，Redis开始支持混合持久化。即将RDB与AOF结合使用，RDB负责定时全量持久化数据，AOF负责记录最后一次RDB后的增量日志。使得Redis的数据恢复在恢复效率与数据完整性之间取得一个完美的平衡点。
-
+#redis 底层基本结构数据类型
+set:底层使用了intset和hashtable两种数据结构存储的，intset我们可以理解为数组，hashtable就是普通的哈希表
+zset:
+    zset底层的存储结构包括ziplist或skiplist，在同时满足以下两个条件的时候使用ziplist，其他时候使用skiplist，两个条件如下：
+        有序集合保存的元素数量小于128个
+        有序集合保存的所有元素的长度小于64字节
+ 当ziplist作为zset的底层存储结构时候，每个集合元素使用两个紧挨在一起的压缩列表节点来保存，第一个节点保存元素的成员，第二个元素保存元素的分值。
+ 当skiplist作为zset的底层存储结构的时候，使用skiplist按序保存元素及分值，使用dict来保存元素和分值的映射关系。
+list:
+    3.2之前
+    压缩列表ziplist
+    双向链表linkedlist
+    3.2之后
+    在3.2之后，ziplist被quicklist替代
 # Redis的数据类型？
 
 答：Redis 支持五种数据类型：string（字符串），hash（哈希），list（列表）， set（集合）及 zsetsorted set：有序集合)。
