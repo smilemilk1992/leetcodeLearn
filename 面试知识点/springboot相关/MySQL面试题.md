@@ -59,7 +59,11 @@
 
     B+树，经过优化的 B+树
     主要是在所有的叶子结点中增加了指向下一个叶子节点的指针，因此 InnoDB 建 议为大部分表使用默认自增的主键作为主索引。
-
+9、mysql 存储引擎有几种
+    InnoDB存储引擎：InnoDB是事务型数据库的首选引擎，支持事务安全表（ACID）。InnoDB是默认的MySQL引擎。
+    MyISAM存储引擎：MyISAM基于ISAM存储引擎，并对其进行扩展。它是在Web、数据仓储和其他应用环境下最常使用的存储引擎之一。MyISAM拥有较高的插入、查询速度，但不支持事物。
+    MEMORY存储引擎：MEMORY存储引擎将表中的数据存储到内存中，未查询和引用其他表数据提供快速访问
+    ARCHIVE存储引擎
 10、实践中如何优化MySQL
 最好是按照以下顺序优化：https://youzhixueyuan.com/MySQL-slow-query-optimization-index-optimization.html
 
