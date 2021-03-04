@@ -39,8 +39,11 @@ def heapify(nums,index,length):
         swap(nums,tempIndex,index)
         heapify(nums,tempIndex,length)
 
+def insert(nums,data):
+    pass
 def swap(nums,i,j):
     nums[i],nums[j]=nums[j],nums[i]
 if __name__ == '__main__':
     nums=[1,3,2,5,4,7,6]
     dumpSort(nums)
+    print(nums)

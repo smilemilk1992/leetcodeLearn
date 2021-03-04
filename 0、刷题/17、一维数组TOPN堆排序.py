@@ -21,9 +21,35 @@ https://blog.csdn.net/chibangyuxun/article/details/53018294
 若想得到升序，则建立大顶堆，若想得到降序，则建立小顶堆
 '''
 class Solution:
-    def topN(self, Lists, k):
-        pass
+    def topN(self, nums, k):
+        self.buidMaxHeap(nums)
+        for i in range(len(nums)-1,0,-1):
+            self.swap(nums,0,i)
+            self.heapify(nums,0,i-1)
+        print(nums,nums[-k])
 
+    def buidMaxHeap(self,nums):
+        for i in range(len(nums)//2 -1,-1,-1):
+            self.heapify(nums,i,len(nums)-1)
+
+    def heapify(self,nums,index,length):
+        left=2*index+1
+        right=2*index+2
+        tempIndex=0
+        if left<=length and right<=length:
+            tempIndex=left if nums[left]>nums[right] else right
+        elif left<=length:
+            tempIndex=left
+        elif right<=length:
+            tempIndex=right
+        else:
+            return
+        if nums[tempIndex]>nums[index]:
+            self.swap(nums,tempIndex,index)
+            self.heapify(nums,tempIndex,length)
+
+    def swap(self,nums,a,b):
+        nums[a],nums[b]=nums[b],nums[a]
 
 
 if __name__ == '__main__':

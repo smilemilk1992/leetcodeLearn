@@ -64,3 +64,27 @@
 用过 Spring 框架的都知道 Spring 能流行是因为它的两把利器：IOC 和 AOP，
 IOC 可以帮助我们管理对象的依赖关系，极大减少对象的耦合性，
 而 AOP 的切面编程功能可以更方面的使用动态代理来实现各种动态方法功能（如事务、缓存、日志等）。
+
+#springboot与传统spring项目简单区别
+Spring Boot是在Spring的基础上面搭设的框架，目的是为了简化Spring项目的搭设和开发过程。
+
+旧时我们开发一个普通spring的项目时,会存在很难麻烦的xml配置过程
+    准备相关jar包依赖,包括spring、springmvc、redis、mybaits、log4j、mysql-connector-java 等等相关jar ...
+    配置web.xml文件,Listener配置, Filter配置,servlet配置,log4j配置, error配置...
+    配置数据库链接,配置spring事务
+    配置视图解析器
+    开启注解,自动扫描功能
+    配置完成后, 部署tomcat,启动调试
+    
+现在,有了springboot,大大减少配置时间,一键启动, 方便又快捷
+    起步依赖
+    配置数据源
+    创建入口 @SpringBootApplication
+
+# 拦截器和过滤器区别
+　　①拦截器是基于java的反射机制的，而过滤器是基于函数回调。
+　　②拦截器不依赖与servlet容器，过滤器依赖与servlet容器。
+　　③拦截器只能对action请求起作用，而过滤器则可以对几乎所有的请求起作用。
+　　④拦截器可以访问action上下文、值栈里的对象，而过滤器不能访问。
+　　⑤在action的生命周期中，拦截器可以多次被调用，而过滤器只能在容器初始化时被调用一次。
+　　⑥拦截器可以获取IOC容器中的各个bean，而过滤器就不行，这点很重要，在拦截器里注入一个service，可以调用业务逻辑。

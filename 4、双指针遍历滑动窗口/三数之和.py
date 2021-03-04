@@ -93,8 +93,35 @@ class Solution:
                     k=k-1
         return result
 
+    def threeSum2(self, nums: List[int]) -> List[List[int]]:
+        result=[]
+        if len(nums)<3:
+            return result
+        nums.sort()
+        for i in range(len(nums)):
+            if nums[0]>0:
+                break
+            if i>0 and nums[i]==nums[i-1]:
+                continue
+            j=i+1
+            k=len(nums)-1
+            while j<k:
+                if nums[i]+nums[j]+nums[k]==0:
+                    result.append([nums[i],nums[j],nums[k]])
+                    while j<k and nums[j]==nums[j+1]:
+                        j=j+1
+                    while j<k and nums[k]==nums[k-1]:
+                        k=k-1
+                    j=j+1
+                    k=k-1
+                elif nums[i]+nums[j]+nums[k]<0:
+                    j=j+1
+                else:
+                    k=k-1
+        return result
+
 if __name__ == '__main__':
     nums = [-1, 0, 1, 2, -1, -4]
     s=Solution()
-    rs=s.threeSum1(nums)
+    rs=s.threeSum2(nums)
     print(rs)
