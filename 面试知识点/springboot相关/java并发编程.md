@@ -45,6 +45,10 @@
     2.相对来说，非公平所性能会比较好一点，吞吐量比较大。
 
 6、在Java中CycliBarriar和CountdownLatch有什么区别？
+    CountDownLatch和CyclicBarrier都能够实现线程之间的等待，只不过它们侧重点不同：
+    CountDownLatch一般用于某个线程A等待若干个其他线程执行完任务之后，它才执行；
+    而CyclicBarrier一般用于一组线程互相等待至某个状态，然后这一组线程再同时执行；
+    另外，CountDownLatch是不能够重用的，而CyclicBarrier是可以重用的。
 
     * CyclicBarrier是java推出的一个并发编程工具，它用在多个线程之间协同工作，CyclicBarrier 一个同步辅助类。
     * 线程约定到达某个点，到达这个点之后的线程都停下来，直到最后一个线程也到达了这个点之后，所有的线程才会得到释放。常用的场景是：多个worker线程，每个线程都在循环地做一部分工作，并在最后用cyclicBarrier.await()设下约定点，当最后一个线程做完了工作也到达约定点后，所有线程得到释放，开始下一轮工作
